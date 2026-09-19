@@ -1,0 +1,127 @@
+@use '../mixins' as *;
+
+.kanban {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding-bottom: 16px;
+
+  &__column {
+    flex-shrink: 0;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 220px);
+    background-color: var(--color-primary-mist);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+
+    &.is-drop-target {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgb(13 148 136 / 0.15);
+    }
+
+    @include respond(sm) {
+      width: 230px;
+    }
+  }
+
+  &__column-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 12px 8px;
+  }
+
+  &__column-count {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-text);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xs);
+    padding: 0 7px;
+    line-height: 20px;
+  }
+
+  &__column-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    overflow-y: auto;
+  }
+
+  &__column-empty {
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--color-text-faint);
+    border: 1px dashed var(--color-border-strong);
+    border-radius: var(--radius-xs);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    cursor: grab;
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease,
+      opacity 0.15s ease;
+
+    &:hover {
+      border-color: var(--color-primary-light);
+      box-shadow: var(--shadow-md);
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    &.is-dragging {
+      opacity: 0.5;
+    }
+  }
+
+  &__card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-primary-dark);
+    }
+  }
+
+  &__card-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--color-text-faint);
+
+    .icon {
+      width: 13px;
+      height: 13px;
+    }
+  }
+
+  &__card-actions {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid var(--color-border);
+    padding-top: 6px;
+  }
+}

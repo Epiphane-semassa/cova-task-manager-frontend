@@ -1,0 +1,87 @@
+@use '../mixins' as *;
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background-color: var(--color-background);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 32px;
+
+  @include respond(sm) {
+    padding: 24px 20px;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-primary);
+    color: #fff;
+    margin-bottom: 14px;
+
+    .icon {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  &__subtitle {
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--color-text-muted);
+  }
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__actions {
+    margin-top: 4px;
+  }
+
+  &__error {
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-danger-soft);
+    color: var(--color-danger-dark);
+    font-size: 13px;
+  }
+}
+
+.auth-switch {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-muted);
+
+  a {
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,101 @@
+@use '../mixins' as *;
+
+$toast-z: 1300;
+
+.toast-viewport {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: $toast-z;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(360px, calc(100vw - 32px));
+
+  @include respond(sm) {
+    top: auto;
+    bottom: 16px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left-width: 3px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  animation: toast-in 0.2s ease-out;
+
+  &--success {
+    border-left-color: var(--color-success);
+  }
+
+  &--error {
+    border-left-color: var(--color-danger);
+  }
+
+  &--info {
+    border-left-color: var(--color-info);
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
+  }
+
+  &--success &__icon {
+    color: var(--color-success);
+  }
+
+  &--error &__icon {
+    color: var(--color-danger);
+  }
+
+  &--info &__icon {
+    color: var(--color-info);
+  }
+
+  &__message {
+    flex: 1;
+    font-size: 14px;
+    color: var(--color-text);
+    overflow-wrap: break-word;
+  }
+
+  &__close {
+    flex-shrink: 0;
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@include respond(sm) {
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

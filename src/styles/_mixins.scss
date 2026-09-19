@@ -1,0 +1,25 @@
+$breakpoint-md: 1023px;
+$breakpoint-sm: 639px;
+
+@mixin respond($bp) {
+  @if $bp == md {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $bp == sm {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  }
+}
+
+@mixin focus-ring {
+  outline: 2px solid rgb(13 148 136 / 0.35);
+  outline-offset: 2px;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

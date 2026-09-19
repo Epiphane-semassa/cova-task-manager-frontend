@@ -1,0 +1,43 @@
+:root {
+  --color-primary: #0d9488;
+  --color-primary-dark: #0f766e;
+  --color-primary-darker: #134e4a;
+  --color-primary-light: #2dd4bf;
+  --color-primary-soft: #ccfbf1;
+  --color-primary-mist: #f0fdfa;
+  --color-surface: #ffffff;
+  --color-background: #f0fdfa;
+
+  --color-text: #1d2b2a;
+  --color-text-muted: #5f6f6c;
+  --color-text-faint: #87948f;
+
+  --color-border: #d6e5e2;
+  --color-border-strong: #b6cec9;
+
+  --color-danger: #dc2626;
+  --color-danger-dark: #b91c1c;
+  --color-danger-soft: #fef2f2;
+  --color-success: #059669;
+  --color-success-dark: #047857;
+  --color-success-soft: #ecfdf5;
+  --color-warning: #d97706;
+  --color-warning-dark: #b45309;
+  --color-warning-soft: #fffbeb;
+  --color-info: #2563eb;
+  --color-info-soft: #eff6ff;
+  --color-neutral: #64748b;
+  --color-neutral-soft: #f1f5f9;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+
+  --shadow-sm: 0 1px 2px rgb(15 118 110 / 0.06);
+  --shadow-md: 0 2px 8px rgb(15 118 110 / 0.09);
+  --shadow-lg: 0 10px 30px rgb(15 118 110 / 0.14);
+
+  --font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
